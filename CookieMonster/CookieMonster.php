@@ -2,12 +2,12 @@
 
 /**
  * @author Paweł Bizley Brzozowski
- * @version 1.0 beta
+ * @version 1.0
  * @license http://opensource.org/licenses/BSD-3-Clause
  * 
  * CookieMonster is the Yii widget that adds warning about website cookies
  * @see https://github.com/bizley-code/Yii-CookieMonster
- * @see http://www.yiiframework.com/extension/cookiemonster (to be set)
+ * @see http://www.yiiframework.com/extension/cookiemonster
  * 
  * See README file for configuration and usage examples.
  * 
@@ -44,7 +44,7 @@ class CookieMonster extends CWidget
      * @var array parameters for the texts.
      * Available options:
      * buttonMessage:   string button original message as in Yii::t() $message, default 'I understand'
-     * buttonPrams:     array parameters to be applied to the buttonMessage as in Yii::t() $params, default array()
+     * buttonParams:    array parameters to be applied to the buttonMessage as in Yii::t() $params, default array()
      * category:        string message category as in Yii::t() $category, default 'app'
      * language:        string target language as in Yii::t() $language, default null
      * mainMessage:     string main original message as in Yii::t() $message, default 'We use cookies on our websites to help us offer you the best online experience. By continuing to use our website, you are agreeing to our use of cookies. Alternatively, you can manage them in your browser settings.'
@@ -340,7 +340,7 @@ class CookieMonster extends CWidget
                         break;
 
                     case 'mainParams':
-                    case 'buttonPrams':
+                    case 'buttonParams':
                         $this->addParamsOption($name, $value);
                         break;
                 }
@@ -353,7 +353,6 @@ class CookieMonster extends CWidget
      */
     protected function checkCookie()
     {
-        $valid = array();
         if (is_array($this->cookie) && count($this->cookie)) {
             foreach ($this->cookie as $name => $value) {
                 switch ($name) {
@@ -490,20 +489,7 @@ class CookieMonster extends CWidget
         $this->setDefaults();
         $this->initCookie();
 
-        switch ($this->mode) {
-            case 'box':
-                $view = 'box';
-                break;
-
-            case 'custom':
-                $view = $this->view;
-                break;
-
-            default:
-                $view = 'strip';
-        }
-
-        return $this->render($view, $this->prepareViewParams());
+        return $this->render($this->mode == 'custom' ? $this->view : 'box', $this->prepareViewParams());
     }
     
     /**
