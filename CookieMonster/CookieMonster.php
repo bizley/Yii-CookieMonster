@@ -36,7 +36,7 @@ class CookieMonster extends CWidget
      * setButtonStyle:      array list of button CSS style options to be set replacing the default ones
      * setInnerStyle:       array list of inner div CSS style options to be set replacing the default ones
      * setOuterStyle:       array list of outer div CSS style options to be set replacing the default ones
-     * view:                string path to the custom view (required if [[mode]] is set to 'custom')
+     * view:                string path to the custom view (required if [[mode]] is set to 'custom'), for views outside the widget folder use alias path i.e. 'application.views.cookie'
      */
     public $box = array();
 
