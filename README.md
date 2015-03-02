@@ -39,7 +39,7 @@ Add this code once inside your template file just before ```</body>```
 * setButtonStyle - __array__ list of button CSS style options to be set replacing the default ones
 * setInnerStyle - __array__ list of inner div CSS style options to be set replacing the default ones
 * setOuterStyle - __array__ list of outer div CSS style options to be set replacing the default ones
-* view - __string__ path to the custom view (required if [[mode]] is set to 'custom')
+* view - __string__ path to the custom view (required if [[mode]] is set to 'custom'), for views outside the widget folder use alias path i.e. 'application.views.cookie'
 
 ## Content options
 * buttonMessage - __string__ button original message as in Yii::t() $message, default 'I understand'
