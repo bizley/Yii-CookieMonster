@@ -88,3 +88,6 @@ Add this code once inside your template file just before ```</body>```
             We use cookies on our websites to help us offer you the best online experience. By continuing to use our website, you are agreeing to our use of cookies. Alternatively, you can manage them in your browser settings.<button style="margin-left:10px" class="CookieMonsterOk" type="button">I understand</button>
         </div>
     </div>
+    
+## Yii 2 version
+You can find Yii 2 version at https://github.com/bizley-code/yii2-cookiemonster
