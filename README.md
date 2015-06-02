@@ -9,12 +9,25 @@ This extension adds the information about cookies for the Yii website.
 Yii 1.1
 
 ## Installation
-Copy the CookieMonster folder to your /protected/extensions Yii folder
+Copy the 'CookieMonster' folder from the zip file to your '/protected/extensions' Yii folder.
 
 ## Usage
 Add this code once inside your template file just before ```</body>```
 
     <?php $this->widget('ext.CookieMonster.CookieMonster'); ?>
+    
+This code will render widget with all default options (and 'top' layout). If you want to configure it add options array.
+
+    <?php $this->widget('ext.CookieMonster.CookieMonster', array(/* options here */)); ?>
+    
+All options (and options' options) are described below. For example if you want to use custom message on the button and use 'bottom' layout set:
+
+    <?php $this->widget('ext.CookieMonster.CookieMonster', array(
+        'content' => array(
+            'buttonMessage' => 'OK', // instead of default 'I understand'
+        ),
+        'mode' => 'bottom'
+    )); ?>
 
 ## Options
 * box - __array__ CSS class and styles and HTML options for div
@@ -23,7 +36,7 @@ Add this code once inside your template file just before ```</body>```
 * mode - __string__ widget layout selection
 * params - __mixed__ user's parameters to pass to the custom widget layout
 
-## Box options
+## _box_ options
 * addButtonStyle - __array__ list of button CSS style options to be added or replaced with new values i.e. 'padding-right' => '20px', 'font-weight' => 'bold'
 * addInnerStyle - __array__ list of inner div CSS style options to be added or replaced with new values
 * addOuterStyle - __array__ list of outer div CSS style options to be added or replaced with new values
@@ -41,7 +54,7 @@ Add this code once inside your template file just before ```</body>```
 * setOuterStyle - __array__ list of outer div CSS style options to be set replacing the default ones
 * view - __string__ path to the custom view (required if [[mode]] is set to 'custom'), for views outside the widget folder use alias path i.e. 'application.views.cookie'
 
-## Content options
+## _content_ options
 * buttonMessage - __string__ button original message as in Yii::t() $message, default 'I understand'
 * buttonParams - __array__ parameters to be applied to the buttonMessage as in Yii::t() $params, default array()
 * category - __string__ message category as in Yii::t() $category, default 'app'
@@ -50,14 +63,14 @@ Add this code once inside your template file just before ```</body>```
 * mainParams - __array__ parameters to be applied to the mainMessage as in Yii::t() $params, default array()
 * source - __string__ which message source application component to use as in Yii::t() $source, default null
 
-## Cookie options
+## _cookie_ options
 * domain - __string__ domain name for the cookie, default host portion of the current document location
 * expires - __integer__ number of days this cookie will be valid for, default 30
 * max-age - __integer__ max cookie age in seconds
 * path - __string__ path for the cookie, default '/'
 * secure - __boolean__ wheter cookie should be transmitted over secure protocol as https, default false
 
-## Mode possible values
+## _mode_ possible values
 * bottom - bottom strip
 * box - bottom right box
 * custom - custom mode defined by user (requires box[view] to be set)
